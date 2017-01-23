@@ -5,8 +5,8 @@ EXTS="${EXTS:-js}"
 
 ROOT=$(dirname "$0")
 
-MOD_FILE="${ROOT}/._mod_file"
-LOOP_FILE="${ROOT}/._loop_file"
+MOD_FILE="${ROOT}/._mod_file_$$"
+LOOP_FILE="${ROOT}/._loop_file_$$"
 touch ${MOD_FILE}
 
 while [[ true ]]
