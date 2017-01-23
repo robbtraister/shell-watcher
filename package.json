@@ -1,6 +1,6 @@
 {
   "name": "shell-watcher",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This package performs file watching using basic shell commands.  You can use the `watch.sh` script directly, or the exported node functions from `index.js`.",
   "main": "index.js",
   "scripts": {
