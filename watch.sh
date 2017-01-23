@@ -3,21 +3,20 @@
 NOTIFY="${NOTIFY:-echo}"
 EXTS="${EXTS:-js}"
 
-(
-  cd $(dirname "$0")
+ROOT=$(dirname "$0")
 
-  rm -rf ./._this_time
-  touch ./._last_mod
+MOD_FILE="${ROOT}/._mod_file"
+LOOP_FILE="${ROOT}/._loop_file"
+touch ${MOD_FILE}
 
-  while [[ true ]]
-  do
-    touch ./._this_time
-    CHANGES=$(find "$@" -type f -newer ./._last_mod | egrep "\.(${EXTS//[,; ]/|})$")
-    if [[ $CHANGES ]]
-    then
-      mv -f ./._this_time ./._last_mod
-      ${NOTIFY} "${CHANGES}" &
-    fi
-    sleep ${SLEEP:-1}
-  done
-)
+while [[ true ]]
+do
+  touch ${LOOP_FILE}
+  CHANGES=$(find "$@" -type f -newer ${MOD_FILE} | egrep "\.(${EXTS//[,; ]/|})$")
+  if [[ $CHANGES ]]
+  then
+    mv -f ${LOOP_FILE} ${MOD_FILE}
+    ${NOTIFY} "${CHANGES}" &
+  fi
+  sleep ${SLEEP:-1}
+done
