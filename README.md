@@ -18,7 +18,7 @@ watch({
   targets: ['./some/dir',  './some/other'],
   exts: ['js', 'json'],
   sleep: 2
-  })
+})
 ```
 
 ```json
@@ -26,8 +26,11 @@ var watch = require('shell-watcher');
 watch.pipe({
   targets: './some/dir',
   exts: 'js',
-  sleep: 2
-  })
+  sleep: 2,
+  handler: (data) => {
+    console.log(data);
+  }
+})
 ```
 
 ```json
@@ -37,5 +40,5 @@ watch.http({
   exts: 'js',
   sleep: 2,
   port: 9001
-  })
+})
 ```
