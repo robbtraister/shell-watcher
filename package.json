@@ -1,0 +1,22 @@
+{
+  "name": "shell-watcher",
+  "version": "0.0.1",
+  "description": "This package performs file watching using basic shell commands.  You can use the `watch.sh` script directly, or the exported node functions from `index.js`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbtraister/shell-watcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robbtraister/shell-watcher/issues"
+  },
+  "homepage": "https://github.com/robbtraister/shell-watcher#readme",
+  "dependencies": {
+    "debug": "^2.6.0"
+  }
+}
