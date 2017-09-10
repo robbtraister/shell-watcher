@@ -1,3 +1,5 @@
-var pipe = module.exports = require('./lib/pipe')
+'use strict'
+
+const pipe = module.exports = require('./lib/pipe')
 module.exports.pipe = pipe
 module.exports.http = require('./lib/http')
